@@ -8,7 +8,9 @@
                 <div class="panel-heading">USER</div>
 
                 <div class="panel-body">
-                    View
+                    <strong>Height:</strong> {{ $user->height }}
+                    <br><strong>Weight:</strong> {{ $user->weight }}
+                    <br><strong>DOB:</strong> {{ $user->dob }}
                 </div>
             </div>
         </div>

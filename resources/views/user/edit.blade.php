@@ -8,7 +8,13 @@
                 <div class="panel-heading">USER</div>
 
                 <div class="panel-body">
-                    Edit
+                    <form action="{{ URL::route('user.update', array('id' => Auth::user()->id)) }}" method="post">
+                        <strong>Height:</strong> <input type="text" name="height" value="{{ $user->height }}">
+                        <br><strong>Weight:</strong> <input type="text" name="weight" value="{{ $user->weight }}">
+                        <br><strong>DOB:</strong> <input type="text" name="dob" value="{{ $user->dob }}">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input type="submit" value="Submit">
+                    </form>
                 </div>
             </div>
         </div>
