@@ -48,6 +48,10 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
+                    @if (!Auth::guest())
+                        <li><a href="{{ URL::route('user.view', array('id' => Auth::user()->id)) }}" class=""> View Profile</a></li>
+                        <li><a href="{{ URL::route('user.edit', array('id' => Auth::user()->id)) }}" class=""> Edit Profile</a></li>
+                    @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->
